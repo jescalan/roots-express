@@ -1,0 +1,17 @@
+{
+  "name": "application-name",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app"
+  },
+  "dependencies": {
+    "express": "3.0.x",
+    "jade": "latest",
+    "faye-websocket": "latest",
+    "stylus": "latest",
+    "readdirp": "latest",
+    "underscore": "1.4.x",
+    "roots-css": "latest"
+  }
+}
