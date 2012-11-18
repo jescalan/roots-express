@@ -1,6 +1,6 @@
 {
   "name": "roots-express",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Roots live reload and css library for express",
   "keywords": [
     "front-end",
@@ -14,9 +14,6 @@
   "bugs": "https://github.com/jenius/roots-express/issues",
   "author": "Jeff Escalante",
   "main": "roots.js",
-  "bin": {
-    "roots": "bin/roots"
-  },
   "repository": {
     "type": "git",
     "url": "git://github.com/jenius/roots-express.git"

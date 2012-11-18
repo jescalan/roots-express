@@ -37,6 +37,7 @@ exports.watch = function(server){
 // - makes roots css available to stylus
 // - usage (in express app.js file):
 //   app.use(require('stylus').middleware({ src: __dirname + '/public', compile: roots.middleware }));
+
 exports.middleware = function(str, path) {
   return stylus(str).set('filename', path).use(roots_css());
 }
