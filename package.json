@@ -1,7 +1,7 @@
 {
   "name": "roots-express",
   "version": "0.0.1",
-  "description": "Roots is a tiny, fast, and flexible framework for building front-ends",
+  "description": "Roots live reload and css library for express",
   "keywords": [
     "front-end",
     "development",
@@ -22,13 +22,13 @@
     "url": "git://github.com/jenius/roots-express.git"
   },
   "dependencies": {
-    "colors": "latest",
     "open": "latest",
     "readdirp": "0.2.x",
     "roots-css": "latest",
     "faye-websocket": "0.4.x",
     "stylus": "latest",
     "marked": "0.2.x",
+    "underscore": "latest",
     "coffee-script": "latest"
   },
   "engines": {

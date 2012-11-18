@@ -1,6 +1,6 @@
 # Roots Express
 
-The best parts of the [roots build system](http://github.com/jenius/roots-cli), ported to express.
+Live reload and auto-loaded roots css library from the [roots build system](http://github.com/jenius/roots-cli), ported to express.
 
 Installation
 ------------
@@ -29,7 +29,7 @@ Change it to look more like this, so roots can keep an eye on your folders and l
 
     roots.watch(server);
 
-Finally, inside your layout file, add the following line anywhere:
+Finally, inside your layout file, add the following line anywhere (at the bottom of the body is probably best):
 
     != livereload
 

@@ -25,7 +25,11 @@ exports.watch = function(server){
   });
 
   // middleware to inject socket code function
-  global.livereload = "<script>protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://'; address = protocol + window.location.host + window.location.pathname + '/ws'; socket = new WebSocket(address); socket.onmessage = function(msg) { console.log(msg.data); msg.data == 'reload' && window.location.reload() }</script>"
+  if (process.env.NODE_ENV == 'production') {
+    global.livereload = "";
+  } else {
+    global.livereload = "<script>protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://'; address = protocol + window.location.host + window.location.pathname + '/ws'; socket = new WebSocket(address); socket.onmessage = function(msg) { console.log(msg.data); msg.data == 'reload' && window.location.reload() }</script>";
+  }
 
 }
 
