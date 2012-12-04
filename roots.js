@@ -13,7 +13,7 @@ exports.watch = function(server){
 
   // start the file watcher
   var views = path.join(__dirname, '../..', 'views');
-  var assets = path.join(__dirname, '../..', 'public');
+  var assets = path.join(__dirname, '../..', 'assets');
   watcher.watchDirectories([views, assets], function(){
     ws && ws.send('reload');
   });
