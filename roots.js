@@ -42,13 +42,17 @@ exports.middleware = function(str, path) {
   return stylus(str).set('filename', path).use(roots_css());
 }
 
+// @api public
+// - adds roots-css to connect-assets
+// - usage (in express app.js file):
+//   var assets = require('connect-assets'); roots.add_compiler(assets);
 exports.add_compiler = function(assets){
   assets.cssCompilers.styl = {
     optionsMap: {},
     compileSync: function(sourcePath, source) {
       var callback, options, result, _base, _ref;
       result = '';
-      
+
       callback = function(err, js) {
         if (err) { throw err; }
         return result = js;
