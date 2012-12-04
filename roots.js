@@ -41,3 +41,25 @@ exports.watch = function(server){
 exports.middleware = function(str, path) {
   return stylus(str).set('filename', path).use(roots_css());
 }
+
+exports.add_compiler = function(assets){
+  assets.cssCompilers.styl = {
+    optionsMap: {},
+    compileSync: function(sourcePath, source) {
+      var callback, options, result, _base, _ref;
+      result = '';
+      
+      callback = function(err, js) {
+        if (err) { throw err; }
+        return result = js;
+      };
+
+      options = (_ref = (_base = this.optionsMap)[sourcePath]) != null ? _ref : _base[sourcePath] = {
+        filename: sourcePath
+      };
+
+      stylus(source, options).use(roots_css()).set('compress', this.compress).set('include css', true).render(callback);
+      return result;
+    }
+  }
+}
