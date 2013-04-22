@@ -26,7 +26,8 @@
     "stylus": "latest",
     "marked": "0.2.x",
     "underscore": "latest",
-    "coffee-script": "latest"
+    "coffee-script": "latest",
+    "monocle": "latest"
   },
   "engines": {
     "node": ">=0.8.0"

@@ -1,5 +1,5 @@
 var path = require('path'),
-    watcher = require('./watcher'),
+    Monocle = require('monocle'),
     stylus = require('stylus'),
     roots_css = require('roots-css'),
     WebSocket = require('faye-websocket'),
@@ -12,10 +12,10 @@ var path = require('path'),
 exports.watch = function(server){
 
   // start the file watcher
-  var views = path.join(__dirname, '../..', 'views');
-  var assets = path.join(__dirname, '../..', 'assets');
-  watcher.watchDirectories([views, assets], function(){
-    ws && ws.send('reload');
+  (new Monocle).watchDirectory({
+    root: path.join(__dirname, '../..'),
+    directoryFilter: ['!node_modules'],
+    callback: function(){ ws && ws.send('reload'); }
   });
 
   // set up websockets
