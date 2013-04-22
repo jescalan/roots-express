@@ -1,6 +1,6 @@
 {
   "name": "roots-express",
-  "version": "0.0.4-1",
+  "version": "0.0.5",
   "description": "Roots live reload and css library for express",
   "keywords": [
     "front-end",
